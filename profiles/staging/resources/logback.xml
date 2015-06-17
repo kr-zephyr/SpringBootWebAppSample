@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<configuration>
+
+    <appender name="console" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>%d %5p | %-55logger{55} | %m %n</pattern>
+        </encoder>
+    </appender>
+
+    <root level="debug">
+        <appender-ref ref="console"/>
+    </root>
+
+    <logger name="com.sz21c" additivity="false" level="debug">
+        <appender-ref ref="console"/>
+    </logger>
+
+    <logger name="org.springframework.web" additivity="false" level="error">
+        <appender-ref ref="console"/>
+    </logger>
+
+    <logger name="org.springframework.data" additivity="false" level="error">
+        <appender-ref ref="console"/>
+    </logger>
+
+    <logger name="java.sql" level="info"/>
+
+    <!-- Connection -->
+    <logger name="jdbc.connection" additivity="false" level="info">
+        <appender-ref ref="console"/>
+    </logger>
+
+    <!-- SQL Only -->
+    <logger name="jdbc.sqlonly" additivity="false" level="off">
+        <appender-ref ref="console"/>
+    </logger>
+
+    <!-- SQL + Excuted time. Recommended on Info level. -->
+    <logger name="jdbc.sqltiming" additivity="false" level="info">
+        <appender-ref ref="console"/>
+    </logger>
+
+    <!-- Result set -->
+    <logger name="jdbc.resultset" additivity="false" level="info">
+        <appender-ref ref="console"/>
+    </logger>
+
+    <!-- Result as a table. Recommended on Debug level. -->
+    <logger name="jdbc.resultsettable" additivity="false" level="info">
+        <appender-ref ref="console"/>
+    </logger>
+
+    <!-- Logs all JDBC Call. normally not use this. -->
+    <logger name="jdbc.audit" additivity="false" level="off">
+        <appender-ref ref="console"/>
+    </logger>
+
+</configuration>
