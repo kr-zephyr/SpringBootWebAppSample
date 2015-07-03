@@ -3,7 +3,6 @@ package com.sz21c.springbootwebappsample.sampleservice.service;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.sz21c.common.util.ApacheHttpClient;
-import com.sz21c.common.util.ObjectMapperUtil;
 import com.sz21c.springbootwebappsample.common.properties.HttpTestProperties;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -21,6 +20,9 @@ public class SampleHttpServiceImpl implements SampleHttpService {
     @Autowired
     private HttpTestProperties httpTestProperties;
 
+    @Autowired
+    ObjectMapper objectMapper;
+
     public String getHttpResponse() throws Exception {
         ApacheHttpClient apacheHttpClient = new ApacheHttpClient();
 
@@ -31,7 +33,7 @@ public class SampleHttpServiceImpl implements SampleHttpService {
 
         Map<String, Object> postParam = new HashMap<>();
         postParam.put("message", "This is a message.");
-        String postParamStr = ObjectMapperUtil.convertObjectIntoJsonString(postParam);
+        String postParamStr = objectMapper.writeValueAsString(postParam);
 
         String platformResponse = apacheHttpClient.requestPOST(
                 reqUrl, postParamStr, httpHeaderMap, "application/json", "UTF-8");
