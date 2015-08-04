@@ -26,10 +26,12 @@ public class SampleController {
     @RequestMapping(value = "/", method = RequestMethod.GET)
     public ModelAndView getHome(HttpServletRequest request) throws Exception {
         String selectedDbName = sampleMySqlService.getSqlTest();
+        String selectedDbNameUsingInterface = sampleMySqlService.getSqlTestUsingInterface();
         String httpResponse = sampleHttpService.getHttpResponse();
 
         request.setAttribute("h1str", "Hello World!!! via controller");
         request.setAttribute("selectedDbName", selectedDbName);
+        request.setAttribute("selectedDbNameUsingInterface", selectedDbNameUsingInterface);
         request.setAttribute("httpResponse", httpResponse);
 
         return new ModelAndView("home");

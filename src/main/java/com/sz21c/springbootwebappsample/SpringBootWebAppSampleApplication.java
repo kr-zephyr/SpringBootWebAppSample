@@ -2,6 +2,7 @@ package com.sz21c.springbootwebappsample;
 
 import com.sz21c.springbootwebappsample.common.properties.HttpTestProperties;
 import com.sz21c.springbootwebappsample.config.mybatis.MyBatisProperties;
+import org.mybatis.spring.annotation.MapperScan;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.SpringApplication;
