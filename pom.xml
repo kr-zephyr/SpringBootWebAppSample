@@ -8,7 +8,7 @@
 	<version>0.1.0</version>
 	<packaging>war</packaging>
 
-	<name>Spring Boot Web Apo Sample</name>
+	<name>Spring Boot Web App Sample</name>
 	<description>Demo Web App project for Spring Boot. with myBatis(connected MySql), HttpClient, logback, java config, properties, support JSP and jstl.</description>
 
 	<parent>
@@ -136,6 +136,13 @@
 			<artifactId>hsqldb</artifactId>
 			<version>2.3.3</version>
 		</dependency>
+
+        <!-- http://mvnrepository.com/artifact/org.projectlombok/lombok -->
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.16.8</version>
+        </dependency>
 
 	</dependencies>
 	
