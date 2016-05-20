@@ -26,7 +26,10 @@ public class MyBatisConfig {
     @Autowired
     private MyBatisProperties properties;
 
-
+    /**
+     * 외부 DB(MySql 등)를 사용하는 경우 이 Method를 활성화시킨다.
+     * Profile의 application.properties에서 DB 정보는 반드시 입력된 후...
+     */
     public DataSource dataSourceForMyBatis() {
         BasicDataSource dataSource = new BasicDataSource();
         dataSource.setDriverClassName(properties.getDriverClassName());
@@ -40,6 +43,7 @@ public class MyBatisConfig {
         dataSource.setValidationQuery(properties.getValidationQuery());
         dataSource.setTestWhileIdle(properties.isTestWhileIdle());
         dataSource.setTimeBetweenEvictionRunsMillis(properties.getTimeBetweenEvictionRunsMillis());
+
         return dataSource;
     }
 
