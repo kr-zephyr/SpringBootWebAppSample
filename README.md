@@ -9,10 +9,12 @@ Web Application을 위한 Spring Boot Sample 프로젝트 입니다.
 - Maven build 및 pom 설정
 - Profile을 이용한 Maven build
 - MySql을 사용하기 위한 MyBatis 설정
+- Embedded DB를 사용하기 위한 EmbeddedDatabaseBuilder 설정 및 hsqldb 연동
 - Http 통신을 위한 HttpClient 설정
 - logback 설정
 - java config 기반
 - embedded Tomcat을 통한 JSP 및 Servlet, jstl 지원
+- Spring boot test
 
 
 # 구동 방법
@@ -28,4 +30,9 @@ java -jar SpringBootWebAppSample-0.1.0.war
 * 시간되는데로 조금씩 보강하겠습니다.
 * 이 프로젝트는 여러가지 구현 방법들을 담을 예정입니다. 다만, 이러한 여러가지 방법들이 반드시 정답은 아닙니다.
 * 본 소스는 마음대로 Fork하셔서 재배포하셔도 되구요... Contributor로 직접 수정해 주셔도 좋습니다.
-* 본 소스의 datasource는 db4free의 무료 DB를 활용하고 있습니다. 초기 기동 후 http 요청 시 반환 시간이 다소 깁니다. 혹시 변경할 수 있는 DB가 있는지 확인해 본 후 개선하겠습니다... ㅜㅜ (동작에는 영향이 없습니다.)
+
+# history
+###2016.05.20
+- db4free의 mysql 서비스를 제거하고 hsqldb를 이용한 embedded DB로 변경하였습니다.
+- 일부 lib 버전 업데이트 및 lombok을 적용하였습니다. (IDE Setting 필요함)
+- 지금까지 빼먹고 있던(...) test를 추가하기 시작했습니다;;;
