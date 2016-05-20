@@ -2,6 +2,8 @@ package com.sz21c.springbootwebappsample.config.jackson;
 
 import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.sz21c.springbootwebappsample.common.properties.HttpTestProperties;
+import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -9,6 +11,7 @@ import org.springframework.context.annotation.Configuration;
  * Created by zephyr on 15. 7. 3..
  */
 @Configuration
+@EnableConfigurationProperties(HttpTestProperties.class)
 public class JacksonConfig {
 
     @Bean
