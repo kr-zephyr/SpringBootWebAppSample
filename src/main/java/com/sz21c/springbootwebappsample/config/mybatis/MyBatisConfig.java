@@ -9,6 +9,8 @@ import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseBuilder;
+import org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseType;
 
 import javax.sql.DataSource;
 
@@ -22,7 +24,7 @@ public class MyBatisConfig {
     @Autowired
     private MyBatisProperties properties;
 
-    @Bean
+
     public DataSource dataSourceForMyBatis() {
         BasicDataSource dataSource = new BasicDataSource();
         dataSource.setDriverClassName(properties.getDriverClassName());
@@ -37,6 +39,15 @@ public class MyBatisConfig {
         dataSource.setTestWhileIdle(properties.isTestWhileIdle());
         dataSource.setTimeBetweenEvictionRunsMillis(properties.getTimeBetweenEvictionRunsMillis());
         return dataSource;
+    }
+
+    @Bean
+    public DataSource dataSourceForMyBatisUsingEmbedded() {
+        EmbeddedDatabaseBuilder builder = new EmbeddedDatabaseBuilder()
+            .setName("springbootwebappsampledb")
+            .addScript("classpath:hsqldb-init-sql/create-table.sql")
+            .addScript("classpath:hsqldb-init-sql/insert-data.sql");
+        return builder.setType(EmbeddedDatabaseType.HSQL).build();
     }
 
     @Bean

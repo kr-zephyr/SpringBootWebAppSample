@@ -9,8 +9,8 @@
 <body>
     <p><h1>home</h1></p>
     <p><h1>${h1str}</h1></p>
-    <p>Current Selected database is ${selectedDbName}</p>
-    <p>Current Selected database is ${selectedDbNameUsingInterface} (using sqlMapper implements interface)</p>
+    <p>All rows of users table is ${selectedDbName}</p>
+    <p>All rows of users table is ${selectedDbNameUsingInterface} (using sqlMapper implements interface)</p>
     <p>http response is ${httpResponse}</p>
 </body>
 </html>
