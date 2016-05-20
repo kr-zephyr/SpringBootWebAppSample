@@ -1,7 +1,7 @@
 package com.sz21c.springbootwebappsample.sampleservice.controller;
 
 import com.sz21c.springbootwebappsample.sampleservice.service.SampleHttpService;
-import com.sz21c.springbootwebappsample.sampleservice.service.SampleMySqlService;
+import com.sz21c.springbootwebappsample.sampleservice.service.SampleRdbService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,15 +18,15 @@ public class SampleController {
     final static Logger LOG = LoggerFactory.getLogger(SampleController.class);
 
     @Autowired
-    private SampleMySqlService sampleMySqlService;
+    private SampleRdbService sampleRdbService;
 
     @Autowired
     private SampleHttpService sampleHttpService;
 
     @RequestMapping(value = "/", method = RequestMethod.GET)
     public ModelAndView getHome(HttpServletRequest request) throws Exception {
-        String selectedDbName = sampleMySqlService.getSqlTest();
-        String selectedDbNameUsingInterface = sampleMySqlService.getSqlTestUsingInterface();
+        String selectedDbName = sampleRdbService.getSqlTest();
+        String selectedDbNameUsingInterface = sampleRdbService.getSqlTestUsingInterface();
         String httpResponse = sampleHttpService.getHttpResponse();
 
         request.setAttribute("h1str", "Hello World!!! via controller");

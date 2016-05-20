@@ -8,9 +8,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
-public class SampleMySqlServiceImpl implements SampleMySqlService {
+public class SampleRdbServiceImpl implements SampleRdbService {
 
-    final static Logger LOG = LoggerFactory.getLogger(SampleMySqlServiceImpl.class);
+    final static Logger LOG = LoggerFactory.getLogger(SampleRdbServiceImpl.class);
 
     @Autowired
     private SampleDao sampleDao;
