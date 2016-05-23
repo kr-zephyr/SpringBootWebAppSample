@@ -60,6 +60,12 @@
 		</dependency>
 
 		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-orm</artifactId>
+			<version>4.2.6.RELEASE</version>
+		</dependency>
+
+		<dependency>
 			<groupId>org.apache.tomcat.embed</groupId>
 			<artifactId>tomcat-embed-jasper</artifactId>
 			<version>8.0.23</version>
@@ -70,6 +76,14 @@
 			<groupId>javax.servlet.jsp.jstl</groupId>
 			<artifactId>javax.servlet.jsp.jstl-api</artifactId>
 			<version>1.2.1</version>
+			<scope>runtime</scope>
+		</dependency>
+
+		<!-- http://mvnrepository.com/artifact/org.glassfish.web/jstl-impl -->
+		<dependency>
+			<groupId>org.glassfish.web</groupId>
+			<artifactId>jstl-impl</artifactId>
+			<version>1.2</version>
 			<scope>runtime</scope>
 		</dependency>
 
@@ -143,6 +157,13 @@
             <artifactId>lombok</artifactId>
             <version>1.16.8</version>
         </dependency>
+
+		<!-- http://mvnrepository.com/artifact/org.hibernate/hibernate-core -->
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-core</artifactId>
+			<version>4.3.11.Final</version>
+		</dependency>
 
 	</dependencies>
 	
