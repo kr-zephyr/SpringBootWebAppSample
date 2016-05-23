@@ -1,5 +1,6 @@
 package com.sz21c.springbootwebappsample.sampleservice.controller;
 
+import com.sz21c.springbootwebappsample.sampleservice.model.Users;
 import com.sz21c.springbootwebappsample.sampleservice.service.SampleHttpService;
 import com.sz21c.springbootwebappsample.sampleservice.service.SampleRdbService;
 import org.slf4j.Logger;
@@ -11,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
+import java.util.List;
 
 @Controller
 public class SampleController {
@@ -25,14 +27,16 @@ public class SampleController {
 
     @RequestMapping(value = "/", method = RequestMethod.GET)
     public ModelAndView getHome(HttpServletRequest request) throws Exception {
-        String selectedDbName = sampleRdbService.getSqlTest();
-        String selectedDbNameUsingInterface = sampleRdbService.getSqlTestUsingInterface();
+        String rowCount = sampleRdbService.getSqlTest();
+        String rowCountUsingInterface = sampleRdbService.getSqlTestUsingInterface();
         String httpResponse = sampleHttpService.getHttpResponse();
+        List<Users> userList = sampleRdbService.getAllUsersUsingHibernate();
 
         request.setAttribute("h1str", "Hello World!!! via controller");
-        request.setAttribute("selectedDbName", selectedDbName);
-        request.setAttribute("selectedDbNameUsingInterface", selectedDbNameUsingInterface);
+        request.setAttribute("rowCount", rowCount);
+        request.setAttribute("rowCountUsingInterface", rowCountUsingInterface);
         request.setAttribute("httpResponse", httpResponse);
+        request.setAttribute("userList", userList);
 
         return new ModelAndView("home");
     }
