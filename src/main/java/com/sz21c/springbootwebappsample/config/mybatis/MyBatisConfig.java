@@ -16,7 +16,9 @@ import javax.sql.DataSource;
  * MyBatis의 sqlmap을 Mapper 기반으로 사용하기 위해 MapperScan을 추가한다.
  */
 @Configuration
-@MapperScan("com.sz21c.springbootwebappsample.sampleservice.mapper")
+@MapperScan({
+    "com.sz21c.springbootwebappsample.sampleservice.mapper"
+})
 @EnableConfigurationProperties(MyBatisProperties.class)
 public class MyBatisConfig {
 
