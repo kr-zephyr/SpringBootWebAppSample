@@ -16,8 +16,6 @@ import java.util.List;
 @Transactional
 public class SampleRdbServiceImpl implements SampleRdbService {
 
-    final static Logger LOG = LoggerFactory.getLogger(SampleRdbServiceImpl.class);
-
     @Autowired
     private SampleDao sampleDao;
 
