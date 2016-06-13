@@ -5,7 +5,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.core.env.Environment;
 import org.springframework.orm.hibernate4.HibernateTransactionManager;
 import org.springframework.orm.hibernate4.LocalSessionFactoryBean;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
@@ -17,9 +16,6 @@ import java.util.Properties;
 @EnableTransactionManagement
 @EnableConfigurationProperties(HibernateProperties.class)
 public class HibernateConfig {
-
-    @Autowired
-    Environment environment;
 
     @Autowired
     HibernateProperties hibernateProperties;
